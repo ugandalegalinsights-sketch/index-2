@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugandan Legal Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.active {
+            max-height: 600px; /* Adjust for content */
+        }
+        .justice-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .accordion-button {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-blue-900">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white text-center py-6 flex items-center justify-center">
+        <img src="https://cdn.pixabay.com/photo/2017/01/31/00/09/scales-2022042_1280.png" alt="Scales of Justice" class="justice-icon">
+        <h1 class="text-4xl font-bold">Ugandan Legal Insights</h1>
+    </header>
+
+    <!-- Settings -->
+    <section class="container mx-auto py-4">
+        <button id="settings-toggle" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Settings</button>
+        <div id="settings-panel" class="hidden mt-2 p-4 bg-blue-50 rounded">
+            <p class="font-semibold">Customize your experience:</p>
+            <button onclick="toggleDarkMode()" class="bg-blue-600 text-white px-3 py-1 m-1 rounded">Toggle Dark Mode</button>
+            <button onclick="increaseFontSize()" class="bg-blue-600 text-white px-3 py-1 m-1 rounded">Increase Font</button>
+            <button onclick="decreaseFontSize()" class="bg-blue-600 text-white px-3 py-1 m-1 rounded">Decrease Font</button>
+            <input type="text" id="search" placeholder="Search topics..." class="w-full p-2 mt-2 border border-blue-300 rounded">
+        </div>
+    </section>
+
+    <!-- Legal Topics -->
+    <section class="container mx-auto py-6">
+        <h2 class="text-2xl font-semibold mb-4">Legal Topics</h2>
+        <div class="mb-4">
+            <button class="accordion-button w-full bg-blue-100 text-blue-900 p-4 text-left text-lg font-medium hover:bg-blue-200">Land Law</button>
+            <div class="accordion-content">
+                <ul class="pl-6 py-2">
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Freehold Tenure</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Mailo Tenure</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Leasehold Tenure</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Customary Tenure</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Land Registration</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Land Disputes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button class="accordion-button w-full bg-blue-100 text-blue-900 p-4 text-left text-lg font-medium hover:bg-blue-200">Family Law</button>
+            <div class="accordion-content">
+                <ul class="pl-6 py-2">
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Marriage Types</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Divorce Grounds</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Child Custody</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Succession</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button class="accordion-button w-full bg-blue-100 text-blue-900 p-4 text-left text-lg font-medium hover:bg-blue-200">Civil Procedure</button>
+            <div class="accordion-content">
+                <ul class="pl-6 py-2">
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Institution of Suits</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Pleadings</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Trials</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Appeals</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button class="accordion-button w-full bg-blue-100 text-blue-900 p-4 text-left text-lg font-medium hover:bg-blue-200">Criminal Procedure</button>
+            <div class="accordion-content">
+                <ul class="pl-6 py-2">
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Arrest and Bail</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Charges</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Trials</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Sentencing</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button class="accordion-button w-full bg-blue-100 text-blue-900 p-4 text-left text-lg font-medium hover:bg-blue-200">Corporate & Commercial</button>
+            <div class="accordion-content">
+                <ul class="pl-6 py-2">
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Company Formation</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Contracts</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Intellectual Property</a></li>
+                    <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Insolvency</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Uploads -->
+    <section class="container mx-auto py-6 text-center border border-blue-300 rounded">
+        <h2 class="text-2xl font-semibold mb-4">Recent Uploads</h2>
+        <p class="mb-4">To upload content, use a CMS like WordPress or edit this section manually.</p>
+        <ul class="list-disc mx-auto max-w-md">
+            <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Land Reform Update (Sep 2025)</a></li>
+            <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Family Law Amendment (Aug 2025)</a></li>
+            <li><a href="#content-placeholder" class="text-blue-600 hover:underline">Civil Procedure Guide (Jul 2025)</a></li>
+        </ul>
+    </section>
+
+    <!-- Question Form -->
+    <section class="container mx-auto py-6">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Pose a Question or Case</h2>
+        <form action="mailto:your.email@example.com" method="post" enctype="text/plain" class="max-w-lg mx-auto">
+            <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 mb-2 border border-blue-300 rounded">
+            <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 mb-2 border border-blue-300 rounded">
+            <textarea name="question" placeholder="Your Question or Case Details" rows="5" required class="w-full p-2 mb-2 border border-blue-300 rounded"></textarea>
+            <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800">Submit</button>
+        </form>
+        <p class="text-center mt-2">Your submission will be sent to the site owner for review and response.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center py-6">
+        <p>&copy; 2025 Ugandan Legal Insights. All rights reserved.</p>
+        <p><strong>Vision:</strong> Accessible legal resources for all Ugandans.</p>
+        <p><strong>Mission:</strong> Educate and empower through reliable legal insights.</p>
+        <p><strong>Contact:</strong> info@ugandanlegalinsights.com | +256-XXX-XXXXXX</p>
+    </footer>
+
+    <!-- Content Placeholder -->
+    <section id="content-placeholder" class="container mx-auto py-6 hidden">
+        <h3>Content Coming Soon</h3>
+        <p>Detailed legal materials will be added here.</p>
+    </section>
+
+    <script>
+        // Accordion
+        const accordions = document.querySelectorAll('.accordion-button');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', () => {
+                const content = acc.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+
+        // Settings toggle
+        document.getElementById('settings-toggle').addEventListener('click', () => {
+            document.getElementById('settings-panel').classList.toggle('hidden');
+        });
+
+        // Dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('bg-gray-900');
+            document.body.classList.toggle('text-white');
+            document.querySelectorAll('.accordion-button').forEach(el => {
+                el.classList.toggle('bg-blue-800');
+                el.classList.toggle('text-white');
+            });
+        }
+
+        // Font size
+        let fontSize = 16;
+        function increaseFontSize() {
+            fontSize += 2;
+            document.body.style.fontSize = `${fontSize}px`;
+        }
+        function decreaseFontSize() {
+            fontSize = Math.max(12, fontSize - 2);
+            document.body.style.fontSize = `${fontSize}px`;
+        }
+
+        // Search
+        document.getElementById('search').addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const links = document.querySelectorAll('.accordion-content a');
+            links.forEach(link => {
+                link.parentElement.style.display = link.textContent.toLowerCase().includes(filter) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
